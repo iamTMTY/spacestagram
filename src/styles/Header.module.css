@@ -1,0 +1,10 @@
+.siteHeader {
+	padding: 0rem 0 1.5rem 0;
+}
+
+.siteHeader h1 {
+	font-size: 3rem;
+	text-align: center;
+	font-family: "Pacifico", cursive;
+	color: #95bf47;
+}
