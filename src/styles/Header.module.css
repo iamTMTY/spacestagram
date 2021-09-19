@@ -8,3 +8,9 @@
 	font-family: "Pacifico", cursive;
 	color: #95bf47;
 }
+
+@media only screen and (max-width: 500px) {
+	.siteHeader h1 {
+		font-size: 1.5rem;
+	}
+}
