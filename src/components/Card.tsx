@@ -3,7 +3,6 @@ import styles from '../styles/Card.module.css'
 import HeartFill from './HeartFill';
 import HeartStroke from './HeartStroke';
 import { AnimatePresence} from 'framer-motion'
-import PostModal from './PostModal';
 
 interface Props {
   img: any
@@ -13,7 +12,6 @@ interface Props {
 const Card:React.FC<Props> = ({img, liked}) => {
   
   const [like, setLike] = useState(liked)
-  const [showModal, setShowModal] = useState(false)
 
 
   const onLikeClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -27,13 +25,11 @@ const Card:React.FC<Props> = ({img, liked}) => {
     setLike(!like)
   }
   return (
-    <>
-      {showModal && <PostModal cardInfo={{img, like, setLike, onLikeClick, setShowModal}}/>}
       <div className={styles.card}>
         <figure className={styles.spaceImg}>
-          <img src={img.url} alt={img.title} onClick={()=> setShowModal(true)} />
+          <img src={img.url} alt={img.title} />
           <figcaption>
-            <h2 title={img.title} onClick={()=> setShowModal(true)} className={styles.title} > {img.title} </h2>
+            <h2 title={img.title} className={styles.title} > {img.title} </h2>
             <span className={styles.date}>{new Date(img.date).toDateString()}</span>
             {/* <p className={styles.description}> {img.explanation} </p><br /> */}
           </figcaption>
@@ -47,7 +43,6 @@ const Card:React.FC<Props> = ({img, liked}) => {
           </button>
         </div>
       </div>
-    </>
   )
 }
 
