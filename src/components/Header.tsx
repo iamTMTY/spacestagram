@@ -8,7 +8,7 @@ interface Props {
 const Header:React.FC<Props> = () => {
   return (
     <header className={styles.siteHeader}>
-      <h1>Spacestagram</h1>
+      <h1 role="banner">Spacestagram</h1>
     </header>
   )
 }
